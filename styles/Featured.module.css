@@ -1,0 +1,43 @@
+.container {
+ height: calc(100vh - 100px);
+ overflow: hidden;
+ overflow-y: hidden;
+
+ position: relative;
+ background: linear-gradient(#1ED19A, #d1411e);
+
+
+ ;
+}
+
+.arrowContainer {
+ position: absolute;
+ height: 20%;
+ width: 10%;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ cursor: pointer;
+ z-index: 2;
+}
+
+.wrapper {
+ width: 300vw;
+ height: 100%;
+ display: flex;
+ transition: all 1.5s ease-in-out;
+}
+
+.imgContainer {
+ position: relative;
+ width: 100vw;
+ height: 100%;
+}
+
+@media screen and (max-width:480px) {
+ .container {
+  height: 50vh;
+ }
+
+
+}

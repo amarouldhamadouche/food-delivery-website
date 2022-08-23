@@ -1,0 +1,192 @@
+.container {
+ padding: 50px;
+ display: flex;
+
+}
+
+.left {
+ flex: 2
+}
+
+.right {
+ flex: 1
+}
+
+.table {
+ width: 100%;
+ border-spacing: 20px;
+ margin-bottom: 50px
+}
+
+.imgContainer {
+ width: 100px;
+ height: 100px;
+ position: relative;
+
+
+}
+
+.name {
+ color: #d1411e;
+ font-weight: bold;
+}
+
+.name,
+.id,
+.total {
+ display: flex;
+ justify-content: center;
+}
+
+.card {
+ width: 90%;
+ max-height: 300px;
+ background-color: #333;
+ padding: 50px;
+ padding-top: 30px;
+ color: white;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+
+}
+
+.h1 {
+ font-weight: 500;
+ font-size: 18px;
+}
+
+.info {
+ display: flex;
+ align-items: center;
+}
+
+.subTitle {
+ font-weight: 500;
+ font-size: 18px;
+ margin-right: 10px;
+}
+
+.text {
+ font-size: 18px;
+}
+
+.button {
+ padding: 7px 0;
+ color: cornflowerblue;
+}
+
+.statusContainer {
+ display: flex;
+ width: 90%;
+ padding: 0 20px;
+ justify-content: space-between;
+}
+
+.done {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.inProgress {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+ from {
+  opacity: 0;
+ }
+
+ to {
+  opacity: 1;
+ }
+}
+
+.unDone {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ opacity: 0.3;
+}
+
+.unDone .checkedImg,
+.inProgress .checkedImg {
+ opacity: 0;
+}
+
+@media screen and (max-width:480px) {
+ .container {
+  height: auto;
+  flex-direction: column;
+  padding: 20px;
+ }
+
+ .trTitle {
+  display: none;
+ }
+
+ .tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+ }
+
+ .imgContainer {
+  height: 35vh;
+  width: 35vw;
+ }
+
+ .name {
+  font-size: 20px;
+ }
+
+ .total {
+  font-size: 24px;
+ }
+
+ .id,
+ .total,
+ .addresse {
+  font-size: 18px;
+ }
+
+ .total::before {
+  content: 'Total: ';
+  font-weight: 500;
+ }
+
+ .addresse::before {
+  content: 'Adresse: ';
+  font-weight: 500;
+ }
+
+ .id::before {
+  content: 'Id: ';
+  font-weight: 500;
+ }
+
+ .statusContainer {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+ }
+
+ .done,
+ .unDone,
+ .inProgress {
+  margin-bottom: 20px;
+ }
+
+ .card {
+  width: 100%;
+ }
+}

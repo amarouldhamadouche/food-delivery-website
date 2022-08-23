@@ -1,0 +1,44 @@
+.container {
+ width: 30%;
+ padding: 50px 40px;
+ cursor: pointer;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin: 0 20px;
+}
+
+.title {
+ color: #d1411e;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.price {
+ font-size: 18px;
+ font-weight: bold;
+}
+
+.desc {
+ font-size: 18px;
+ color: gray;
+ text-align: center;
+ max-width: 100%;
+ overflow-wrap: break-word;
+}
+
+@media screen and (max-width:480px) {
+ .container {
+  width: 100%;
+ }
+
+ .title {
+  font-size: 30px;
+ }
+
+ .price,
+ .desc {
+  font-size: 24px;
+ }
+}
