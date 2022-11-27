@@ -26,10 +26,10 @@ export default function Home({productList,admin}) {
 export const getServerSideProps =  async (ctx)=>{
   const myCookie = ctx.req?.cookies
   let admin = false
+  let res
   if (myCookie.token === process.env.TOKEN){
     admin = true
   }
-let res
 try{
  res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product`)
  }catch(err){}
@@ -38,7 +38,7 @@ try{
 
 return {
   props:{
-    productList:res.data,
+    productList:res?.data || {},
     admin
 
 
