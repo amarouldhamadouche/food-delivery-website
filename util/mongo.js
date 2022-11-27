@@ -1,15 +1,15 @@
 import mongoose from 'mongoose'
 
-const MONGO_URL = process.env.MONGO_URL
+const MONGODB_URI = process.env.MONGODB_URI
 
-if (!MONGO_URL) {
+if (!MONGODB_URI) {
   throw new Error(
-    'Please define the MONGO_URL environment variable inside .env.local'
+    'Please define the MONGODB_URI environment variable inside .env.local'
   )
 }
 
 /**
- * Global is used here to maintain a cached connection across hot reloads
+ * Global is used here to maintain a cached connection across hot reloads__
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
@@ -29,7 +29,7 @@ async function dbConnect() {
       bufferCommands: false,
     }
 
-    cached.promise = mongoose.connect(MONGO_URL, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose
     })
   }
