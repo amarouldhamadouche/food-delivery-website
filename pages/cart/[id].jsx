@@ -46,11 +46,11 @@ export default function Cart ({cart}){
    </div>
   )
 }
-export const getServerSideProps = async (ctx,{params})=>{
+export const getServerSideProps = async (ctx)=>{
 
 
 
- const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/cart/${params.id}`)
+ const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/cart/${ctx.params.id}`)
  return {
    props:{
    cart:res.data
