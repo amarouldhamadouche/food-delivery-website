@@ -25,7 +25,7 @@ export default function Cart () {
   const createCart = async(id)=>{
     
     try{
-    const res =   await axios.post(`http://localhost:3000/api/cart`,{product:cart.products,quantity:cart.quantity,total:cart.total,orderId:id})
+    const res =  typeof(window)!=="undefined" && await axios.post( `${window.location.origin}/api/cart`,{product:cart.products,quantity:cart.quantity,total:cart.total,orderId:id})
     if(res.status===200){
       dispatch(reset())
       Router.push( `/order/${id}` )}
@@ -37,7 +37,7 @@ export default function Cart () {
   }
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/order", data)
+      const res = typeof(window)!=="undefined" && await axios.post( `${window.location.origin}/api/order`, data)
      if(res.status === 201){
     createCart(res.data._id)
     }}catch(err){
