@@ -50,7 +50,7 @@ export const getServerSideProps = async ({params})=>{
 
 
 
- const res = await axios.get(`http://localhost:3000/api/cart/${params.id}`)
+ const res = axios.get(`https://${ctx.req.rawHeaders[1]}/api/cart/${params.id}`)
  return {
    props:{
    cart:res.data
