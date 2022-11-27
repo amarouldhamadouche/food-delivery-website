@@ -12,7 +12,7 @@ export default function Index ({products,orders}) {
  const status = ['preparing','on the way','delivered']
  const deleteProduct = async (id)=>{
   try{
- const res = await axios.delete(`http://localhost:3000/api/product/${id}`)
+ const res =  typeof(window)!=="undefined" && await axios.delete( `${window.location.origin}/api/product/${id}`)
   setProductList(productList.filter(p=>p._id!==id))
   }catch(err){
    console.log('er',err)
@@ -22,7 +22,7 @@ export default function Index ({products,orders}) {
   const currentOrder = orderList.filter((o)=>o._id===id)[0]
   const currentStatus = currentOrder.status
   try{
-  const res = await axios.put(`http://localhost:3000/api/order/${id}`,{status:currentStatus + 1})
+  const res =  typeof(window)!=="undefined" && await axios.put( `${window.location.origin}/api/order/${id}`,{status:currentStatus + 1})
   setOrderList([res.data,...orderList.filter((o)=>o._id!==id)])
   }catch(err){
    console.log(err)
