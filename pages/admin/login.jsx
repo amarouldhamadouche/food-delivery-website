@@ -8,7 +8,7 @@ export default function Login () {
  const [error,setError] = useState(false)
  const handleClick = async()=>{
   try{
-  typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/login',{username,password})
+  typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/login`,{username,password})
   Router.push('/admin')
   }catch(err){
     setError(true)
