@@ -30,9 +30,9 @@ export default function Contact ()  {
   return (
    <div className={styles.container}>
    <h1 className={styles.title}>Send us an email </h1>
-   <form ref={form} className={styles.form} onSubmit={sendEmail}>email'/>
+   <form ref={form} className={styles.form} onSubmit={sendEmail}>
     <label className={styles.label} htmlFor='message'>message :</label>
-    <textarea placholder="type your message here, and don't forget to send your email" rows={5} className={styles.textArea} required='true' id='message' name='message' type='text'/>
+    <textarea placeholder="type your message here, and don't forget to send your email" rows={5} className={styles.textArea} required='true' id='message' name='message' type='text'/>
     <button className={styles.button } type='submit'>Send</button>
    </form>
    {isSent && <div style={{color:'teal',marginTop:'20px'}}>the mail was sent successffuly!</div>}
