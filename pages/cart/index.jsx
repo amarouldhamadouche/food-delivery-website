@@ -25,7 +25,7 @@ export default function Cart () {
   const createCart = async(id)=>{
     
     try{
-    const res =  typeof(window)!=="undefined" && await axios.post( `${window.location.origin}/api/cart`,{product:cart.products,quantity:cart.quantity,total:cart.total,orderId:id})
+    const res =  typeof(window)!=="undefined" && await axios.post(`${window.location.origin}/api/cart`,{product:cart.products,quantity:cart.quantity,total:cart.total,orderId:id})
     if(res.status===200){
       dispatch(reset())
       Router.push( `/order/${id}` )}
