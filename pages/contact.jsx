@@ -1,7 +1,7 @@
 import styles from '../styles/Contact.module.css'
 import emailjs from "@emailjs/browser"
 import axios from 'axios'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 export default function Contact ()  {
  const [isSent,setIsSent] = useState(false)
  const [isError,setIsError] = useState(false)
