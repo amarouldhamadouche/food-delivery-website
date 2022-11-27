@@ -30,7 +30,7 @@ export const getServerSideProps =  async (ctx)=>{
     admin = true
   }
 
-const res = await axios.get('http://localhost:3000/api/product')
+const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product`)
 
 
 
