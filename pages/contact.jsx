@@ -16,7 +16,7 @@ export default function Contact ()  {
    typeof(window)!=="undefined" &&
    await axios({
    method: 'POST',
-   url :'`${window.location.origin}/api/mail`, 
+   url :`${window.location.origin}/api/mail`, 
    contentType:'application/json',
    data : formData})
    setIsError(false)
