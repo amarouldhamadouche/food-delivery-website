@@ -93,8 +93,8 @@ const handleChange = (e,option)=>{
     </div>
   )
 }
-export const getServerSideProps =  async({params})=>{
-  const res = await axios.get(`http://localhost:3000/api/product/${params.id}`)
+export const getServerSideProps =  async(ctx)=>{
+  const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product/${ctx.params.id}`)
   return {
     props : {
       product : res.data
