@@ -42,7 +42,7 @@ export const Add = ({setClose,product}) => {
  image:url,
  type
  }
- const res = await axios.put('http://localhost:3000/api/product',product)
+ const res = typeof(window)!=="undefined" && await axios.put( `${window.location.origin}/api/product`,product)
  if(res.status===200){
   setClose(true)
  }
@@ -68,7 +68,7 @@ const handleUpdate = async(e)=>{
   image:file? url:product.image,
   type
   }
-  const res = await axios.put(`http://localhost:3000/api/product/${product._id}`,updatedProduct)
+  const res = typeof(window)!=="undefined" && await axios.put( `${window.location.origin}/api/product/${product._id}`,updatedProduct)
   if(res.status===200){
    setClose(true)
   }
