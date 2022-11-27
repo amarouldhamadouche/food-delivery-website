@@ -13,16 +13,17 @@ export default function Contact ()  {
    formData[feild.name] = feild.value
   })
   try{
-await axios({
- method: 'POST',
- url :'http://localhost:3000/api/mail',
- contentType:'application/json',
- data : formData})
- setIsError(false)
- setIsSent(true)
- }catch(err){
-  setIsSent(false)
-setIsError(true)
+   typeof(window)!=="undefined" &&
+   await axios({
+   method: 'POST',
+   url :'`${window.location.origin}/api/mail`, 
+   contentType:'application/json',
+   data : formData})
+   setIsError(false)
+   setIsSent(true)
+   }catch(err){
+    setIsSent(false)
+    setIsError(true)
  }
 
  }
