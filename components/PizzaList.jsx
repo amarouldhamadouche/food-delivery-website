@@ -12,7 +12,7 @@ export const PizzaList = ({productList}) => {
         sit amet, consectetur adipiscing elit.
      </div>
      <div className={styles.wrapper}>
-      {productList.map((product)=>(
+      {productList.length>0 && productList.map((product)=>(
         <PizzaCard key={product._id} product={product}/>
       ))}
      </div>
