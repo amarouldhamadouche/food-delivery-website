@@ -1,7 +1,6 @@
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export default function handler(req, res) {
- console.log('boddy',req.body)
  const body =req.body
  const message = `
   Name: ${body.name}rn
@@ -18,6 +17,6 @@ sgMail.send({
  res.status(200).json({ status: 'Ok' });
 }).catch((err)=>{
  res.status(500).json(err)
- console.log(err)})
+ })
  
 }
