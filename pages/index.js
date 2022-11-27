@@ -29,9 +29,9 @@ export const getServerSideProps =  async (ctx)=>{
   if (myCookie.token === process.env.TOKEN){
     admin = true
   }
-
-const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product`)
-
+try{
+ const res = await axios.get(`https://${ctx.req.rawHeaders[1]}/api/product`)
+ }catch(err){}
 
 
 
