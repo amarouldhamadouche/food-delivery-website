@@ -19,7 +19,11 @@
  font-size: 18px;
  font-weight: bold;
 }
-
+.imgContainer {
+ position: relative;
+ width: 80%;
+ height: 300px
+}
 .desc {
  font-size: 18px;
  color: gray;
