@@ -69,3 +69,33 @@
  font-weight: 500;
  width: 200px;
 }
+@media screen and (max-width:480px) {
+ .container {
+  padding-top: 10px;
+  justify-content: flex-end;
+ }
+
+ .wrapper {
+  width: 80%;
+  padding: 10px 50px
+ }
+
+.title{
+  font-size : 15px
+}
+
+.label{
+   font-size:12px;
+margin-bottom:5px
+}
+
+.input{
+  height : 35px
+}
+
+.cancelButton,
+.button{
+  padding : 5px 10px;
+  font-size : 12px
+}
+}
