@@ -29,8 +29,8 @@ export default function Index ({products,orders}) {
   }
  }
   return (
-    <>
-        <div className={styles.container}>
+    
+    <div className={styles.container}>
      <div className={styles.item}>
       <h1 >Products </h1>
       <table className={styles.table}>
@@ -140,10 +140,10 @@ export default function Index ({products,orders}) {
 
       </table>
      </div>
-    
-    </div>
     {!close&& <Add setClose={setClose} product={product}/>}
-    </>
+    </div>
+    
+    
 
   )
 }
