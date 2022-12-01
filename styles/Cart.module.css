@@ -1,7 +1,7 @@
 .container {
  padding: 50px;
  display: flex;
-
+ position: relative;
 }
 
 .left {
